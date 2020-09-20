@@ -1,0 +1,19 @@
+.infoMainContainer {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  background-color: rgba(255,255,255,0.9);
+  border: 1px solid white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1), 0 6px 20px 0 rgba(255, 255, 255, 0.45);
+}
+
+.mapWrapper {
+  padding: 10px 5%;
+}
+
+agm-map {
+  height: 70vh;
+  width: 100%;
+}
+
