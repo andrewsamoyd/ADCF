@@ -1,0 +1,85 @@
+.logoBox {
+  height: 10px;
+  max-width: 500px;
+  background-color: transparent;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  text-align: center;
+  color: white;
+  margin: auto;
+  animation: scale 2s linear 1s;
+  animation-fill-mode: forwards;  
+  flex-grow: 1;
+}
+
+.verticalLine {
+  height: 30px;
+  width: 1px;
+  border-left: 2px solid white;
+  margin: auto;
+  margin-top: 2px;
+}
+
+.socials {
+  height: 1px;
+  border-top: 2px solid white;
+  width: 80%;
+  margin: auto;
+  padding-top: 5px;
+}
+
+.col {
+  padding: 0px;
+}
+
+.showAfterAnimation {
+  opacity: 0;
+  animation: show 1s linear 2s;
+  animation-fill-mode: forwards;  
+}
+
+.name {
+  font-size: 35px;
+  padding: 30px 0px 10px 0px;
+  height: 115px;
+}
+
+@media (max-width: 500px) {
+  .name {
+    font-size: 20px;
+    padding: 40px 0px 10px 0px;
+  }
+}
+
+.link {
+  cursor: pointer;
+}
+
+.link:hover {
+  color: gray;
+}
+
+@keyframes scale {
+  from {
+    height: 10px;
+  }
+  to {
+    height: 120px;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.centerVertically {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 125px);
+}

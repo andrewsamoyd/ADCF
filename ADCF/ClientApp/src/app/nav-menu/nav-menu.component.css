@@ -1,0 +1,46 @@
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+.navbar {
+  background-color: rgb(0,0,0,0.6) !important;
+}
+
+select {
+  width: 70px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  outline: none;
+  box-shadow: none;
+}
+
+select:focus {
+  background-color: transparent;
+  outline: none;
+  box-shadow: none;
+}
+
+select option {
+  background-color: black;
+  color: white;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
