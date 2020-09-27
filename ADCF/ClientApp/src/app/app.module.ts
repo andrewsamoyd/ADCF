@@ -36,7 +36,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
     FormsModule,
     NgxGalleryModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyCAXrGkbCuPemMAau8ruvmE5sFK3rnmeM8'
+      apiKey: 'AIzaSyCg-a8-m2uR7SIA3p6TYgnsipBYChI-bbo'
     }),
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
