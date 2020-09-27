@@ -1,5 +1,5 @@
 <div class="infoMainContainer">
-  <h1 class="pageHeader">Contacts</h1>
+  <h1 class="pageHeader">{{dictionary.contactsName}}</h1>
   <div class="row">
     <div class="col-md">
       <div class="mapWrapper">
@@ -8,8 +8,10 @@
         </agm-map>
       </div>
     </div>
-    <div class="col-md">
-      Contact information here
+    <div class="col-md contact-info">
+      {{dictionary.email}}: <a href="mailto:igor.bilinsky@gmail.com" target="_blank"> igor.bilinsky@gmail.com</a>
+      <br>
+      {{dictionary.phone}}: <a href="tel:34636144986" target="_blank"> +34 636 144 986</a>
     </div>
   </div>
 </div>

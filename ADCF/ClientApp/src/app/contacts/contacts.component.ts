@@ -9,8 +9,8 @@ import { LocalizationService } from '../services/localization.service';
 })
 export class ContactsComponent implements OnInit{
   dictionary;
-  lat = 41.75;
-  lng = 2.2411;
+  lat = 41.8165;
+  lng = 2.46051;
 
   constructor(private localizationService: LocalizationService){}
 

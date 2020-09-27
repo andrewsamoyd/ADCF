@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark box-shadow mb-3">
+  <nav class="navbar navbar-expand-sm fixed-top navbar-toggleable-sm navbar-dark bg-dark box-shadow mb-3">
     <div class="container-fluid">
       <a class="navbar-brand" [routerLink]="['/']">Alba de can Femella</a>
       <button
@@ -15,10 +15,10 @@
       </button>
       <div class="navbar-collapse collapse d-sm-inline-flex flex-sm" [ngClass]="{ show: isExpanded }">
         <ul class="navbar-nav flex-grow">
-          <li class="nav-item">
+          <li class="nav-item" (click)="collapse()">
             <a class="nav-link" routerLink="/gallery" routerLinkActive="active">{{dictionary.galleryName}}</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" (click)="collapse()">
             <a class="nav-link" routerLink="/contacts" routerLinkActive="active">{{dictionary.contactsName}}</a>
           </li>
         </ul>

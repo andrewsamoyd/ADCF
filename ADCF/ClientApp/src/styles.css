@@ -1,5 +1,17 @@
 @import '~font-awesome/css/font-awesome.css';
 
+.container-fluid {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.spinner-grow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+}
+
 a {
   color: #0366d6;
 }
