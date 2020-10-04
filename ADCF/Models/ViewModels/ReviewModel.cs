@@ -7,7 +7,7 @@
         public long StartTimeStamp { get; set; }
         public long EndTimeStamp { get; set; }
         public long CreatedTimeStamp { get; set; }
-        public int СleanlinessRating { get; set; }
+        public int CleanlinessRating { get; set; }
         public int ComfortRating { get; set; }
         public int LocationRating { get; set; }
         public int QualityRating { get; set; }

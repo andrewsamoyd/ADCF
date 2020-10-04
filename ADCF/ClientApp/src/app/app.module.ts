@@ -14,6 +14,10 @@ import { LocalizationService } from './services/localization.service';
 
 import { NgxGalleryModule } from 'ngx-gallery';
 import { AgmCoreModule } from '@agm/core';
+import { ReviewsComponent } from './reviews/reviews.component';
+import { ReviewsService } from './services/reviews.service';
+import { BaseService } from './services/base.service';
+import { RatingModule } from 'ng-starrating';
 
 export class CustomHammerConfig extends HammerGestureConfig  {
   overrides = {
@@ -28,12 +32,14 @@ export class CustomHammerConfig extends HammerGestureConfig  {
     NavMenuComponent,
     HomeComponent,
     GalleryComponent,
-    ContactsComponent
+    ContactsComponent,
+    ReviewsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    RatingModule,
     NgxGalleryModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCg-a8-m2uR7SIA3p6TYgnsipBYChI-bbo'
@@ -42,10 +48,13 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'gallery', component: GalleryComponent },
       { path: 'contacts', component: ContactsComponent },
+      { path: 'reviews', component: ReviewsComponent },
     ])
   ],
   providers: [
+    BaseService,
     LocalizationService,
+    ReviewsService,
     { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig }
   ],
   bootstrap: [AppComponent]

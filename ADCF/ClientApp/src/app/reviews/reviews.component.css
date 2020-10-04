@@ -1,0 +1,101 @@
+.infoMainContainer {
+  font-family: serif;
+  margin-top: 70px;
+  margin-left: auto;
+  padding: 20px 10px 40px 10px;
+  margin-right: auto;
+  width: 95%;
+  background-color: rgba(255,255,255,0.9);
+  border: 1px solid white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1), 0 6px 20px 0 rgba(255, 255, 255, 0.45);
+  margin-bottom: 30px;
+}
+
+.pageHeader {
+  font-size: 55px;
+}
+
+p {
+  margin-bottom: 0px;
+}
+
+.reviewBox {
+  margin: 10px;
+  padding: 15px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px grey;
+}
+
+.personImageWrapper {
+  border-radius: 50%;
+  box-shadow: 2px 2px 5px lightgrey;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+.personImageWrapper img {
+  width: 50px;
+  height: 50px;
+}
+
+.grayColor {
+  color: gray;
+}
+
+.createdDate {
+  float: right;
+  margin-right: 10px;
+}
+
+.ratingWrapper {
+  padding: 15px;
+}
+
+.inline div {
+  display: inline-block;
+}
+
+.inline div:first-child {
+  width: 125px;
+}
+
+blockquote {
+  font-style: italic;
+  border-radius: 15px;
+  width: 100%;
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote:before {
+  color: #ccc;
+  content: '\201C';
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.15em;
+  vertical-align: -0.4em;
+}
+
+blockquote p {
+  display: inline;
+}
+
+.writeReview {
+  float: right;
+  color: #0071c2;
+  border-color: #0071c2;
+  border-radius: 5px;
+  padding: 5px 15px 5px 15px;
+  margin-right: 10px;
+  margin-top: 20px;
+  outline: none;
+}
+
+.writeReview:hover {
+  background-color: #dae9ff;
+}

@@ -1,0 +1,95 @@
+<div class="infoMainContainer">
+  <div class="row">
+    <div class="col">
+      <h1 class="pageHeader">{{dictionary.reviews}}</h1>
+    </div>
+    <div class="col">
+      <button class="writeReview">{{dictionary.writeReview}}</button>
+    </div>
+  </div>
+  <ng-template #loader>
+    <div class="spinner-grow" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </ng-template>
+  <div class="row" *ngIf="reviews; else loader">
+    <div class="col">
+      <div *ngFor="let review of reviews" class="reviewBox">
+        <div class="createdDate">
+          <p class="grayColor">{{formatUnixDate(review.createdTimeStamp)}}</p>
+        </div>
+        <div class="row">
+          <div class="personImageWrapper">
+            <img src="../../assets/images/person.png">
+          </div>
+          <div>
+            <p><b>{{review.fullName}}</b></p>
+            <p *ngIf="review.startTimeStamp && review.endTimeStamp; else createdDate" class="grayColor">{{dictionary.reviewed}}: {{formatUnixDate(review.startTimeStamp)}} - {{formatUnixDate(review.endTimeStamp)}}</p>
+            <ng-template #createdDate>
+              <p class="grayColor">{{dictionary.reviewed}}: {{formatUnixDate(review.createdTimeStamp)}}</p>
+            </ng-template>
+          </div>
+        </div>
+        <div class="row ratingWrapper">
+          <div class="col">
+            <div class="inline">
+              <div>
+                <p>{{dictionary.staff}}</p>
+              </div>
+              <div>
+                <star-rating value="{{review.staffRating}}" totalstars="5" checkedcolor="gold" uncheckedcolor="black" size="20px" readonly="true" (rate)="onRate($event)"></star-rating>
+              </div>
+            </div>
+            <div class="inline">
+              <div>
+                <p>{{dictionary.service}}</p>
+              </div>
+              <div>
+                <star-rating value="{{review.servicesRating}}" totalstars="5" checkedcolor="gold" uncheckedcolor="black" size="20px" readonly="true" (rate)="onRate($event)"></star-rating>
+              </div>
+            </div>
+            <div class="inline">
+              <div>
+                <p>{{dictionary.cleanliness}}</p>
+              </div>
+              <div>
+                <star-rating value="{{review.cleanlinessRating}}" totalstars="5" checkedcolor="gold" uncheckedcolor="black" size="20px" readonly="true" (rate)="onRate($event)"></star-rating>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="inline">
+              <div>
+                <p>{{dictionary.comfort}}</p>
+              </div>
+              <div>
+                <star-rating value="{{review.comfortRating}}" totalstars="5" checkedcolor="gold" uncheckedcolor="black" size="20px" readonly="true" (rate)="onRate($event)"></star-rating>
+              </div>
+            </div>
+            <div class="inline">
+              <div>
+                <p>{{dictionary.quality}}</p>
+              </div>
+              <div>
+                <star-rating value="{{review.qualityRating}}" totalstars="5" checkedcolor="gold" uncheckedcolor="black" size="20px" readonly="true" (rate)="onRate($event)"></star-rating>
+              </div>
+            </div>
+            <div class="inline">
+              <div>
+                <p>{{dictionary.location}}</p>
+              </div>
+              <div>
+                <star-rating value="{{review.locationRating}}" totalstars="5" checkedcolor="gold" uncheckedcolor="black" size="20px" readonly="true" (rate)="onRate($event)"></star-rating>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <blockquote>
+            {{review.reviewText}}
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
