@@ -99,3 +99,21 @@ blockquote p {
 .writeReview:hover {
   background-color: #dae9ff;
 }
+
+.writeReviewWrapper {
+  padding: 20px;
+}
+
+label {
+  font-weight: bold;
+  margin-left: 3px;
+}
+
+.writeReviewInput {
+  margin-top: 10px;
+}
+
+.sendBtn {
+  float: right;
+  width: 100px;
+}

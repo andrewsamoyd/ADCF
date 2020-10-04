@@ -13,7 +13,13 @@ export class Dictionaty {
         quality: "Quality",
         location: "Location",
         comfort: "Comfort",
-        writeReview: "Write a review"
+        writeReview: "Write a review",
+        back: "Back",
+        name: "Name",
+        dateFrom: "From",
+        dateTo: "To",
+        send: "Send",
+        nameRequired: "Name is required"
     }
     public static ukrainianDictionaty = {
         mainPageWelcome : "Вітаю Добрих Людей",
@@ -29,7 +35,13 @@ export class Dictionaty {
         quality: "Quality",
         location: "Location",
         comfort: "Comfort",
-        writeReview: "Write a review"
+        writeReview: "Write a review",
+        back: "Back",
+        name: "Name",
+        dateFrom: "From",
+        dateTo: "To",
+        send: "Send",
+        nameRequired: "Name is required"
     }    
     public static frenchDictionaty = {
         mainPageWelcome : "Bienvenue aux Braves Gens",
@@ -45,7 +57,13 @@ export class Dictionaty {
         quality: "Quality",
         location: "Location",
         comfort: "Comfort",
-        writeReview: "Write a review"
+        writeReview: "Write a review",
+        back: "Back",
+        name: "Name",
+        dateFrom: "From",
+        dateTo: "To",
+        send: "Send",
+        nameRequired: "Name is required"
     }    
     public static spanishDictionaty = {
         mainPageWelcome : "La Buena Gente Bienvenida",
@@ -61,7 +79,13 @@ export class Dictionaty {
         quality: "Quality",
         location: "Location",
         comfort: "Comfort",
-        writeReview: "Write a review"
+        writeReview: "Write a review",
+        back: "Back",
+        name: "Name",
+        dateFrom: "From",
+        dateTo: "To",
+        send: "Send",
+        nameRequired: "Name is required"
     }
     public static catalunDictionaty = {
         mainPageWelcome : "La Gent Bona Benvingut",
@@ -77,6 +101,12 @@ export class Dictionaty {
         quality: "Quality",
         location: "Location",
         comfort: "Comfort",
-        writeReview: "Write a review"
+        writeReview: "Write a review",
+        back: "Back",
+        name: "Name",
+        dateFrom: "From",
+        dateTo: "To",
+        send: "Send",
+        nameRequired: "Name is required"
     }
 }

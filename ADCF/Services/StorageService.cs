@@ -71,7 +71,7 @@ namespace ADCF.Services
                     token = queryResult.ContinuationToken;
                 } while (token != null);
 
-                return result.Select(m => m.ToViewModel()).ToList();
+                return result.Select(m => m.ToViewModel()).OrderByDescending(m => m.CreatedTimeStamp).ToList();
             }
             catch (StorageException e)
             {

@@ -22,5 +22,13 @@ export class ReviewsService extends BaseService {
       .pipe(
         catchError(this.handleError<Review[]>('getReview', []))
       );
-    }
+  }
+
+  addReview(model: Review) {
+    var url = `${this.hostUrl + this.reviewsUrl}`;
+    return this.http.post(url, model)
+      .pipe(
+        catchError(this.handleError<Review[]>('getReview', []))
+      );
+  }
 }

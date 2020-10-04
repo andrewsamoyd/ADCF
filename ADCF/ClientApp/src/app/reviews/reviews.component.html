@@ -1,18 +1,107 @@
 <div class="infoMainContainer">
+
   <div class="row">
     <div class="col">
       <h1 class="pageHeader">{{dictionary.reviews}}</h1>
     </div>
     <div class="col">
-      <button class="writeReview">{{dictionary.writeReview}}</button>
+      <button *ngIf="!isWriteReview" class="writeReview" (click)="switchToWriteReview()">{{dictionary.writeReview}}</button>
+      <button *ngIf="isWriteReview" class="writeReview" (click)="swithToViewMode()"> < {{dictionary.back}}</button>
     </div>
   </div>
-  <ng-template #loader>
-    <div class="spinner-grow" role="status">
-      <span class="sr-only">Loading...</span>
+
+  <div *ngIf="!reviews" class="spinner-grow" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+
+  <div *ngIf ="isWriteReview" class="writeReviewWrapper">
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="name">{{dictionary.name}}</label>
+          <input [(ngModel)]="reviewToCreate.fullName" type="text" class="form-control" id="name" placeholder="{{dictionary.name}}">
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="name">{{dictionary.dateFrom}}</label>
+            <input [(ngModel)]="reviewToCreate.startDate" type="date" class="form-control">
+          </div>
+          <div class="col">
+            <label for="name">{{dictionary.dateTo}}</label>
+            <input [(ngModel)]="reviewToCreate.endDate" type="date" class="form-control">
+          </div>
+        </div>
+        <div class="writeReviewInput">
+          <div class="md-form">
+            <label for="form7">{{dictionary.writeReview}}</label>
+            <textarea [(ngModel)]="reviewToCreate.reviewText" id="form7" class="md-textarea form-control" rows="4"></textarea>
+          </div>
+        </div>   
+      </div>
     </div>
-  </ng-template>
-  <div class="row" *ngIf="reviews; else loader">
+
+    <div class="row ratingWrapper">
+      <div class="col-md-3">
+        <div class="inline">
+          <div>
+            <p>{{dictionary.staff}}</p>
+          </div>
+          <div>
+            <star-rating value="5" totalstars="5" checkedcolor="gold" uncheckedcolor="black" size="20px" readonly="false" (rate)="setStaffRating($event)"></star-rating>
+          </div>
+        </div>
+        <div class="inline">
+          <div>
+            <p>{{dictionary.service}}</p>
+          </div>
+          <div>
+            <star-rating value="5" totalstars="5" checkedcolor="gold" uncheckedcolor="black" size="20px" readonly="false" (rate)="setServiceRating($event)"></star-rating>
+          </div>
+        </div>
+        <div class="inline">
+          <div>
+            <p>{{dictionary.cleanliness}}</p>
+          </div>
+          <div>
+            <star-rating value="5" totalstars="5" checkedcolor="gold" uncheckedcolor="black" size="20px" readonly="false" (rate)="setCleanlinessRating($event)"></star-rating>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="inline">
+          <div>
+            <p>{{dictionary.comfort}}</p>
+          </div>
+          <div>
+            <star-rating value="5" totalstars="5" checkedcolor="gold" uncheckedcolor="black" size="20px" readonly="false" (rate)="setComfortRating($event)"></star-rating>
+          </div>
+        </div>
+        <div class="inline">
+          <div>
+            <p>{{dictionary.quality}}</p>
+          </div>
+          <div>
+            <star-rating value="5" totalstars="5" checkedcolor="gold" uncheckedcolor="black" size="20px" readonly="false" (rate)="setQualityRating($event)"></star-rating>
+          </div>
+        </div>
+        <div class="inline">
+          <div>
+            <p>{{dictionary.location}}</p>
+          </div>
+          <div>
+            <star-rating value="5" totalstars="5" checkedcolor="gold" uncheckedcolor="black" size="20px" readonly="false" (rate)="setLocationRating($event)"></star-rating>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <p class="text-danger" *ngIf="error">{{error}}</p>
+      <button class="btn btn-primary sendBtn" (click)="leaveReview()">{{dictionary.send}}</button>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="reviews && !isWriteReview">
     <div class="col">
       <div *ngFor="let review of reviews" class="reviewBox">
         <div class="createdDate">
